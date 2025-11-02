@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form{
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    
+}
+
+label{
+    display: block;
+    color: #555;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+input{
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 17px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Input focus effect */
+input:focus {
+    border-color: #4961ce;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Gender Dropdown Styling */
+select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 17px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+/* Select focus effect */
+select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Select hover effect */
+select:hover {
+    border-color: #667eea;
+}
+
+button{
+    width: 100%;
+    padding: 13px;
+    background-color: #667eea;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button:hover{
+    background-color: #5562d6;
+}
+
+a{
+    text-decoration: none;
+    color: #667eea;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 400;
+}
