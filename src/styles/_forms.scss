@@ -1,0 +1,215 @@
+// Form Styles
+.form-container {
+  @include flex-center;
+  min-height: calc(100vh - 140px);
+  padding: $spacing-xl $spacing-lg;
+}
+
+.form {
+  @include card;
+  width: 100%;
+  max-width: 450px;
+  @include fade-in;
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+
+    h2 {
+      color: $text-dark;
+      margin-bottom: $spacing-sm;
+    }
+
+    p {
+      color: $text-medium;
+      font-size: $font-size-sm;
+    }
+  }
+
+  &__group {
+    margin-bottom: $spacing-lg;
+  }
+
+  &__label {
+    display: block;
+    color: $text-medium;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-sm;
+
+    &--required::after {
+      content: ' *';
+      color: $error-color;
+    }
+  }
+
+  &__input {
+    @include input-base;
+
+    &--error {
+      border-color: $error-color;
+
+      &:focus {
+        box-shadow: 0 0 0 3px rgba($error-color, 0.1);
+      }
+    }
+
+    &--success {
+      border-color: $success-color;
+
+      &:focus {
+        box-shadow: 0 0 0 3px rgba($success-color, 0.1);
+      }
+    }
+  }
+
+  &__select {
+    @include input-base;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right $spacing-md center;
+    padding-right: $spacing-2xl;
+  }
+
+  &__error {
+    display: none;
+    color: $error-color;
+    font-size: $font-size-xs;
+    margin-top: $spacing-xs;
+    animation: shake 0.3s;
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  &__success {
+    display: none;
+    color: $success-color;
+    font-size: $font-size-xs;
+    margin-top: $spacing-xs;
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  &__button {
+    @include button-base;
+    width: 100%;
+    background: $primary-color;
+    color: $bg-white;
+    margin-top: $spacing-md;
+
+    &:hover:not(:disabled) {
+      background: $primary-dark;
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    &--loading {
+      position: relative;
+      color: transparent;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        left: 50%;
+        margin-left: -8px;
+        margin-top: -8px;
+        border: 2px solid $bg-white;
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: spin 0.6s linear infinite;
+      }
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: $spacing-lg;
+    padding-top: $spacing-lg;
+    border-top: 1px solid $border-color;
+
+    p {
+      color: $text-medium;
+      font-size: $font-size-sm;
+      margin-bottom: 0;
+    }
+
+    a {
+      color: $primary-color;
+      font-weight: $font-weight-semibold;
+
+      &:hover {
+        color: $primary-dark;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Password strength indicator
+.password-strength {
+  margin-top: $spacing-sm;
+  height: 4px;
+  background: $border-color;
+  border-radius: $radius-full;
+  overflow: hidden;
+
+  &__bar {
+    height: 100%;
+    transition: all $transition-base;
+    border-radius: $radius-full;
+
+    &--weak {
+      width: 33%;
+      background: $error-color;
+    }
+
+    &--medium {
+      width: 66%;
+      background: $warning-color;
+    }
+
+    &--strong {
+      width: 100%;
+      background: $success-color;
+    }
+  }
+
+  &__text {
+    font-size: $font-size-xs;
+    margin-top: $spacing-xs;
+    color: $text-medium;
+  }
+}
+
+// Animations
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

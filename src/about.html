@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn about Pravardhan Project - Our mission, vision, and values"
+    />
+    <meta
+      name="keywords"
+      content="about, mission, vision, learning, education"
+    />
+    <meta name="author" content="Pravardhan" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon (1).ico" />
+
+    <title>About - Pravardhan Project</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles/main.scss" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar__container">
+        <a href="/index.html" class="navbar__brand" aria-label="Home">
+          Pravardhan Project
+        </a>
+
+        <ul class="navbar__menu" role="menubar">
+          <li role="none">
+            <a href="/index.html" class="navbar__link" role="menuitem">Home</a>
+          </li>
+          <li role="none">
+            <a
+              href="/about.html"
+              class="navbar__link active"
+              role="menuitem"
+              aria-current="page"
+            >
+              About
+            </a>
+          </li>
+          <li role="none">
+            <a href="/login.html" class="navbar__link" role="menuitem">Login</a>
+          </li>
+          <li role="none">
+            <a href="/signup.html" class="navbar__link" role="menuitem">
+              Sign Up
+            </a>
+          </li>
+        </ul>
+
+        <button
+          class="navbar__toggle"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="navbar__mobile-menu" role="dialog" aria-label="Mobile menu">
+        <ul role="menu">
+          <li role="none">
+            <a href="/index.html" role="menuitem">Home</a>
+          </li>
+          <li role="none">
+            <a href="/about.html" class="active" role="menuitem">About</a>
+          </li>
+          <li role="none">
+            <a href="/login.html" role="menuitem">Login</a>
+          </li>
+          <li role="none">
+            <a href="/signup.html" role="menuitem">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- About Content -->
+    <main>
+      <article class="about" aria-labelledby="about-title">
+        <header class="about__header">
+          <h1 id="about-title">About Pravardhan Project</h1>
+          <p>
+            Empowering learners through innovative education and community
+            collaboration
+          </p>
+        </header>
+
+        <section class="about__content">
+          <h2>Our Story</h2>
+          <p>
+            The Pravardhan Project is dedicated to fostering learning and
+            development through innovative solutions and community engagement.
+            We believe that education should be accessible, engaging, and
+            effective for everyone.
+          </p>
+
+          <h2>What We Do</h2>
+          <p>
+            We provide a comprehensive platform for learners of all levels to
+            access quality educational content, connect with mentors, and engage
+            with a supportive community. Our approach combines modern technology
+            with proven pedagogical methods to create an optimal learning
+            experience.
+          </p>
+
+          <h2>Our Values</h2>
+          <ul>
+            <li>
+              <strong>Excellence:</strong> We strive for the highest quality in
+              everything we do
+            </li>
+            <li>
+              <strong>Accessibility:</strong> Education should be available to
+              everyone, everywhere
+            </li>
+            <li>
+              <strong>Innovation:</strong> We embrace new ideas and technologies
+              to improve learning
+            </li>
+            <li>
+              <strong>Community:</strong> We believe in the power of
+              collaborative learning
+            </li>
+            <li>
+              <strong>Integrity:</strong> We operate with honesty and
+              transparency
+            </li>
+          </ul>
+        </section>
+
+        <!-- Mission Cards -->
+        <section class="about__mission" aria-labelledby="mission-title">
+          <h2 id="mission-title" class="sr-only">Our Mission</h2>
+
+          <article class="about__card">
+            <div class="about__card-icon" aria-hidden="true">🎓</div>
+            <h3>Quality Education</h3>
+            <p>
+              Providing top-tier educational content and resources that empower
+              learners to achieve their goals and unlock their full potential.
+            </p>
+          </article>
+
+          <article class="about__card">
+            <div class="about__card-icon" aria-hidden="true">🌍</div>
+            <h3>Global Reach</h3>
+            <p>
+              Making quality education accessible to learners worldwide,
+              breaking down geographical and economic barriers to learning.
+            </p>
+          </article>
+
+          <article class="about__card">
+            <div class="about__card-icon" aria-hidden="true">💡</div>
+            <h3>Innovation</h3>
+            <p>
+              Continuously evolving our platform with cutting-edge technology
+              and innovative teaching methods to enhance the learning
+              experience.
+            </p>
+          </article>
+
+          <article class="about__card">
+            <div class="about__card-icon" aria-hidden="true">🚀</div>
+            <h3>Growth Mindset</h3>
+            <p>
+              Fostering a culture of continuous improvement, encouraging
+              learners to embrace challenges and learn from every experience.
+            </p>
+          </article>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="about__cta" aria-labelledby="cta-title">
+          <h2 id="cta-title">Join Our Community</h2>
+          <p>
+            Ready to start your learning journey? Join thousands of learners who
+            are already transforming their lives through education.
+          </p>
+          <a href="/signup.html">
+            <button type="button">Get Started Today</button>
+          </a>
+        </section>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer__container">
+        <div class="footer__content">
+          <div class="footer__brand">Pravardhan Project</div>
+          <p class="footer__text">
+            &copy; 2025 Pravardhan Project. All rights reserved.
+          </p>
+        </div>
+
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/login.html">Login</a>
+          <a href="/signup.html">Sign Up</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>

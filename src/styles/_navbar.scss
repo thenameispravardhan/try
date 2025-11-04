@@ -1,0 +1,155 @@
+// Navbar Component
+.navbar {
+  background: $bg-white;
+  box-shadow: $shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: $z-index-sticky;
+  transition: all $transition-base;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-md $spacing-lg;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include respond-to('md') {
+      padding: $spacing-lg $spacing-xl;
+    }
+  }
+
+  &__brand {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $primary-color;
+    text-decoration: none;
+    transition: color $transition-base;
+
+    &:hover {
+      color: $primary-dark;
+    }
+  }
+
+  &__menu {
+    display: none;
+    list-style: none;
+    gap: $spacing-xl;
+
+    @include respond-to('md') {
+      display: flex;
+    }
+  }
+
+  &__link {
+    color: $text-dark;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $radius-md;
+    transition: all $transition-base;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: $primary-color;
+      transition: all $transition-base;
+      transform: translateX(-50%);
+    }
+
+    &:hover,
+    &.active {
+      color: $primary-color;
+
+      &::after {
+        width: 80%;
+      }
+    }
+  }
+
+  &__toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: $spacing-sm;
+    z-index: $z-index-sticky + 1;
+
+    @include respond-to('md') {
+      display: none;
+    }
+
+    span {
+      width: 25px;
+      height: 3px;
+      background: $text-dark;
+      border-radius: $radius-sm;
+      transition: all $transition-base;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+
+  &__mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: $bg-white;
+    padding: 5rem $spacing-xl $spacing-xl;
+    transform: translateX(100%);
+    transition: transform $transition-base;
+    z-index: $z-index-sticky;
+
+    &.active {
+      display: block;
+      transform: translateX(0);
+    }
+
+    @include respond-to('md') {
+      display: none !important;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+    }
+
+    a {
+      font-size: $font-size-xl;
+      color: $text-dark;
+      text-decoration: none;
+      font-weight: $font-weight-semibold;
+      transition: color $transition-base;
+
+      &:hover,
+      &.active {
+        color: $primary-color;
+      }
+    }
+  }
+}

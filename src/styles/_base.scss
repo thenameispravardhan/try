@@ -1,0 +1,119 @@
+// Reset and base styles
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: $text-dark;
+  background-color: $bg-light;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+// Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-heading;
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  margin-bottom: $spacing-md;
+}
+
+h1 {
+  font-size: $font-size-3xl;
+
+  @include respond-to('md') {
+    font-size: $font-size-4xl;
+  }
+}
+
+h2 {
+  font-size: $font-size-2xl;
+
+  @include respond-to('md') {
+    font-size: $font-size-3xl;
+  }
+}
+
+h3 {
+  font-size: $font-size-xl;
+
+  @include respond-to('md') {
+    font-size: $font-size-2xl;
+  }
+}
+
+p {
+  margin-bottom: $spacing-md;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color $transition-base;
+
+  &:hover {
+    color: $primary-dark;
+  }
+}
+
+button {
+  font-family: inherit;
+}
+
+// Focus styles for accessibility
+:focus-visible {
+  outline: 2px solid $primary-color;
+  outline-offset: 2px;
+}
+
+// Screen reader only class
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Utility classes
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+
+  @include respond-to('md') {
+    padding: 0 $spacing-xl;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-auto {
+  margin-top: auto;
+}

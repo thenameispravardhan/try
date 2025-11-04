@@ -1,0 +1,86 @@
+// Footer Component
+.footer {
+  background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+  color: $bg-white;
+  padding: $spacing-xl 0;
+  margin-top: auto;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-lg;
+
+    @include respond-to('md') {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    text-align: center;
+
+    @include respond-to('md') {
+      text-align: left;
+    }
+  }
+
+  &__brand {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: $font-size-sm;
+    opacity: 0.9;
+  }
+
+  &__links {
+    display: flex;
+    gap: $spacing-lg;
+    justify-content: center;
+    margin-top: $spacing-md;
+
+    @include respond-to('md') {
+      margin-top: 0;
+    }
+
+    a {
+      color: $bg-white;
+      font-size: $font-size-sm;
+      transition: opacity $transition-base;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    margin-top: $spacing-md;
+
+    @include respond-to('md') {
+      margin-top: 0;
+    }
+
+    a {
+      width: 40px;
+      height: 40px;
+      @include flex-center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: $radius-full;
+      color: $bg-white;
+      transition: all $transition-base;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+      }
+    }
+  }
+}

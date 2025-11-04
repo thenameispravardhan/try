@@ -1,0 +1,122 @@
+// About Page Styles
+.about {
+  padding: $spacing-2xl $spacing-lg;
+  max-width: 900px;
+  margin: 0 auto;
+  @include fade-in;
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+
+    h1 {
+      color: $text-dark;
+      margin-bottom: $spacing-md;
+    }
+
+    p {
+      font-size: $font-size-lg;
+      color: $text-medium;
+    }
+  }
+
+  &__content {
+    @include card;
+    margin-bottom: $spacing-xl;
+
+    h2 {
+      color: $primary-color;
+      margin-top: $spacing-xl;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    p {
+      color: $text-medium;
+      line-height: 1.8;
+    }
+
+    ul,
+    ol {
+      margin-left: $spacing-xl;
+      margin-bottom: $spacing-md;
+
+      li {
+        color: $text-medium;
+        margin-bottom: $spacing-sm;
+        line-height: 1.8;
+      }
+    }
+  }
+
+  &__mission {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-xl;
+
+    @include respond-to('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__card {
+    @include card;
+    @include hover-lift;
+
+    &-icon {
+      width: 50px;
+      height: 50px;
+      @include flex-center;
+      background: linear-gradient(
+        135deg,
+        $primary-color 0%,
+        $primary-light 100%
+      );
+      color: $bg-white;
+      border-radius: $radius-lg;
+      margin-bottom: $spacing-md;
+      font-size: $font-size-xl;
+    }
+
+    h3 {
+      color: $text-dark;
+      margin-bottom: $spacing-sm;
+    }
+
+    p {
+      color: $text-medium;
+      font-size: $font-size-sm;
+      margin-bottom: 0;
+    }
+  }
+
+  &__cta {
+    @include card;
+    text-align: center;
+    background: linear-gradient(135deg, $primary-color 0%, $primary-dark 100%);
+    color: $bg-white;
+
+    h2 {
+      color: $bg-white;
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: $spacing-xl;
+    }
+
+    button {
+      @include button-base;
+      background: $bg-white;
+      color: $primary-color;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: $shadow-xl;
+      }
+    }
+  }
+}
