@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Login to Pravardhan Project" />
+    <meta name="keywords" content="login, sign in, authentication" />
+    <meta name="author" content="Pravardhan" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon (1).ico" />
+
+    <title>Login - Pravardhan Project</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles/main.scss" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar__container">
+        <a href="/index.html" class="navbar__brand" aria-label="Home">
+          Pravardhan Project
+        </a>
+
+        <ul class="navbar__menu" role="menubar">
+          <li role="none">
+            <a href="/index.html" class="navbar__link" role="menuitem">Home</a>
+          </li>
+          <li role="none">
+            <a href="/about.html" class="navbar__link" role="menuitem">About</a>
+          </li>
+          <li role="none">
+            <a
+              href="/login.html"
+              class="navbar__link active"
+              role="menuitem"
+              aria-current="page"
+            >
+              Login
+            </a>
+          </li>
+          <li role="none">
+            <a href="/signup.html" class="navbar__link" role="menuitem">
+              Sign Up
+            </a>
+          </li>
+        </ul>
+
+        <button
+          class="navbar__toggle"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="navbar__mobile-menu" role="dialog" aria-label="Mobile menu">
+        <ul role="menu">
+          <li role="none">
+            <a href="/index.html" role="menuitem">Home</a>
+          </li>
+          <li role="none">
+            <a href="/about.html" role="menuitem">About</a>
+          </li>
+          <li role="none">
+            <a href="/login.html" class="active" role="menuitem">Login</a>
+          </li>
+          <li role="none">
+            <a href="/signup.html" role="menuitem">Sign Up</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Login Form -->
+    <main>
+      <div class="form-container">
+        <form class="form" aria-labelledby="form-title" novalidate>
+          <div class="form__header">
+            <h2 id="form-title">Welcome Back</h2>
+            <p>Sign in to continue to Pravardhan Project</p>
+          </div>
+
+          <div class="form__group">
+            <label for="email" class="form__label form__label--required">
+              Email Address
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form__input"
+              placeholder="Enter your email"
+              required
+              aria-required="true"
+              aria-describedby="email-error email-success"
+            />
+            <span id="email-error" class="form__error" role="alert"></span>
+            <span id="email-success" class="form__success" aria-live="polite">
+              ✓ Valid email
+            </span>
+          </div>
+
+          <div class="form__group">
+            <label for="password" class="form__label form__label--required">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form__input"
+              placeholder="Enter your password"
+              required
+              aria-required="true"
+              aria-describedby="password-error password-success"
+            />
+            <span id="password-error" class="form__error" role="alert"></span>
+            <span
+              id="password-success"
+              class="form__success"
+              aria-live="polite"
+            >
+              ✓ Valid password
+            </span>
+          </div>
+
+          <button type="submit" class="form__button">Sign In</button>
+
+          <div class="form__footer">
+            <p>
+              Don't have an account?
+              <a href="/signup.html">Create one here</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer__container">
+        <div class="footer__content">
+          <div class="footer__brand">Pravardhan Project</div>
+          <p class="footer__text">
+            &copy; 2025 Pravardhan Project. All rights reserved.
+          </p>
+        </div>
+
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="/about.html">About</a>
+          <a href="/login.html">Login</a>
+          <a href="/signup.html">Sign Up</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>

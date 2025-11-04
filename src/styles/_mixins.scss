@@ -1,0 +1,110 @@
+// Responsive breakpoints
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'sm' {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == 'xl' {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+// Flexbox center
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Button base styles
+@mixin button-base {
+  display: inline-block;
+  padding: $spacing-md $spacing-xl;
+  border: none;
+  border-radius: $radius-md;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all $transition-base;
+  outline: none;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// Card styles
+@mixin card {
+  background: $bg-white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-md;
+  padding: $spacing-xl;
+  transition: all $transition-base;
+}
+
+// Input base styles
+@mixin input-base {
+  width: 100%;
+  padding: $spacing-md $spacing-lg;
+  border: 2px solid $border-color;
+  border-radius: $radius-md;
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  transition: all $transition-base;
+  outline: none;
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
+  }
+
+  &::placeholder {
+    color: $text-light;
+  }
+}
+
+// Smooth fade-in animation
+@mixin fade-in($duration: 0.5s) {
+  animation: fadeIn $duration ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Hover lift effect
+@mixin hover-lift {
+  transition:
+    transform $transition-base,
+    box-shadow $transition-base;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+// Gradient background
+@mixin gradient-bg($color1, $color2) {
+  background: linear-gradient(135deg, $color1 0%, $color2 100%);
+}
